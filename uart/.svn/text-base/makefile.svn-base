@@ -1,0 +1,8 @@
+HOST_CC=arm-mv5sft-linux-gnueabi-g++
+TARGET_SRC=/nfsd/welcom/debug
+TARGET_NAME=uart_test
+${TARGET_NAME}:
+	${HOST_CC} -o uart_test new.c uart.c	 
+clean:
+	rm -f a.out uart.o uart_test
+

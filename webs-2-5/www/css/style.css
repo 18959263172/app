@@ -1,0 +1,30 @@
+@import url(setting.css);
+
+.main{border:1px solid #bbb;border-top:4px solid #bbb;width:980px;margin:0 auto;text-align:left;overflow:auto; zoom:1;}
+.leftP{width:203px;height:509px;float:left;background-color:#9dc2df;border:1px solid #7691a7}
+.rightP{width:775px;float:left;}
+
+h2{height:28px;padding-left:22px;font-size:14px;color:#294267}
+h2 img{margin-right:10px}
+
+.status {padding:40px 0 9px;height:510px;width:180px; float:left;border:1px solid #89a9c2}
+.status a{display:block;line-height:25px;padding-left:60px;color:#294267;height:25px}
+.status a:hover {background:url(../images/arow.gif) #0271dc right center no-repeat ;color:#fff}
+.status a img {margin-right:8px}
+
+
+.base {padding:10px 0 9px;border-bottom:1px solid #89a9c2}
+.base a{display:block;line-height:25px;padding-left:64px;color:#294267;height:25px}
+.base a:hover {background:url(../images/arow.gif) #0271dc right center no-repeat ;color:#fff}
+.base a img {margin-right:8px}
+
+.high {padding:10px 0 9px}
+.high a{display:block;line-height:25px;padding-left:64px;color:#294267;height:25px}
+.high a:hover {background:url(../images/arow.gif) #0271dc right center no-repeat ;color:#fff}
+.high a img {margin-right:8px}
+
+.curr{background:url(../images/arow.gif) #0271dc right center no-repeat ;color:#fff}
+
+.tP{height:29px;background:url(../images/lBg.gif) bottom repeat-x;margin-top:30px}
+.tPt{text-align:center;width:155px;height:29px;font-size:14px;color:#fff;font-weight:900;line-height:34px;overflow:hidden;background:url(../images/tBg.gif) no-repeat}
+.con {margin-top:18px}

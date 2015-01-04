@@ -1,0 +1,15 @@
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX# cd ..
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# ls
+asp.c	   ECOS       emfdb.o	 LYNX		    mime64.c  QNX4	  sockGen.c  uemf.o  value.c   webs.h	   www
+asp.o	   ej.h       form.c	 MACOSX		    mime64.o  readme.txt  sockGen.o  um.c    value.o   webs.h~	   wwwdemo
+balloc.c   ejIntrn.h  form.o	 Makefile	    mime.c    ringq.c	  sock.o     um.h    VXWORKS   webs.o
+balloc.o   ejlex.c    handler.c  Makefile~	    mime.o    ringq.o	  sym.c      um.o    webrom.c  websSSL.c
+CE	   ejlex.o    handler.o  matrixSSLSocket.c  misc.c    rom.c	  sym.o      umui.c  webrom.o  websSSL.h
+cgi.c	   ejparse.c  h.c	 matrixSSLSocket.h  misc.o    rom.o	  tags	     umui.o  webs.c    websuemf.c
+cgi.o	   ejparse.o  h.o	 md5c.c		    NW	      security.c  trace.txt  url.c   websda.c  websuemf.o
+default.c  emfdb.c    LINUX	 md5c.o		    page.c    security.o  uemf.c     url.o   websda.h  WIN
+default.o  emfdb.h    log.txt	 md5.h		    page.o    sock.c	  uemf.h     utils   websda.o  wsIntrn.h
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# cd www
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# ls
+home.htm
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# www/

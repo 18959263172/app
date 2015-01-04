@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/simulator/!svn/ver/8/software/linux/client
+END
+csock.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/simulator/!svn/ver/8/software/linux/client/csock.c
+END
+main
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/simulator/!svn/ver/8/software/linux/client/main
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/simulator/!svn/ver/8/software/linux/client/main.c
+END
+csock.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/simulator/!svn/ver/8/software/linux/client/csock.h
+END
+y
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/simulator/!svn/ver/8/software/linux/client/y
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/simulator/!svn/ver/8/software/linux/client/Makefile
+END

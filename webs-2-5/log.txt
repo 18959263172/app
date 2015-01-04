@@ -1,0 +1,6 @@
+127.0.0.1 - - [14/Jan/2013:10:16:05 +0800] "GET /capture.html HTTP/1.1" 200 4902
+127.0.0.1 - - [14/Jan/2013:10:16:05 +0800] "GET /images/submit.gif HTTP/1.1" 200 782
+127.0.0.1 - - [14/Jan/2013:10:16:05 +0800] "GET /cgi-bin/capture.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jan/2013:10:16:05 +0800] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jan/2013:10:16:09 +0800] "GET /cgi-bin/playback.cgi HTTP/1.1" 404 -
+127.0.0.1 - - [14/Jan/2013:10:16:09 +0800] "GET /favicon.ico HTTP/1.1" 404 -

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/setting.css" type="text/css" rel="stylesheet"></link>
+<link href="css/lucifer.css" type="text/css" rel="stylesheet"></link>
+
+</head>
+<script type="text/javascript" src="script/json.js"></script>
+<script language="javascript">
+	
+function onClick(eventTag)
+{
+	var event ;
+	if( eventTag != null)
+	{
+		alert("1");
+		event = eventTag;
+	}
+	else
+	{
+		alert("2");
+		event = window.event;
+	}
+	
+	var _div;
+	if(event.currentTarget == null)
+	{
+		alert("currentTarget == null");
+		_div = event.srcElement;
+	}
+	else
+	{
+		alert("currentTarget != null");
+		_div = event.currentTarget;
+	}
+	if(_div == null)
+	{
+		alert("3");
+	}
+	
+	alert(_div.id);
+}
+function onLoad()
+{
+	document.getElementById("id1").onclick = onClick;
+	document.getElementById("id2").onclick = onClick;
+	document.getElementById("id3").onclick = onClick;
+	document.getElementById("id4").onclick = onClick;		
+}
+
+</script>
+<body onload="onLoad()">
+
+   <div>---</div>	
+   <div id="id1">xxxxx</div>
+   <div>---</div>
+   <div id="id2">xxxxx</div>
+   <div>---</div>   
+   <div id="id3">xxxxx</div>
+   <div>---</div>   
+   <div id="id4">xxxxx</div>
+   
+</body>
+</html>

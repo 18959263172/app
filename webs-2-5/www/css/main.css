@@ -1,0 +1,53 @@
+@charset "utf-8";
+*{border:0;font-size:12px;font-family:"Arial","新宋体",;color:#000;margin:0;padding:0;}
+img{border:0;vertical-align:middle;}
+body{width:100%;height:100%;background:url() #3a464a top }
+/* body{width:100%;height:100%;background:url() #ebebeb top } */
+a{text-decoration:none;color:#fff;}
+ul{list-style:none;}
+table{border-spacing:0;border-collapse:collapse }
+.btn{border:0;width:55px;height:25px}
+.radio{border:0;}
+.checkbox{border:0}
+input {vertical-align:middle;border:1px solid #878787; height:18px;line-height:18px;margin-right:3px;color:#585858;padding:2px 0 0 5px}
+textarea{border:1px solid #d7d7d7; width:100%;height:46px;padding:5px;margin:0 0 10px;color:#9c9c9c}
+
+select{border:1px solid #dedede; line-height:22px;margin-right:8px;color:#fff;background-color:#555}
+select option{color:#fff;background-color:#555}
+
+
+.bg{border:1px solid #b6b6b6;width:1024px;margin:0 auto;background-color:#ebebeb;}
+.top {border-bottom:0;width:1024px;height:49px;background:url(../images/menubg.gif) repeat-x}
+.logo{width:117px;height:33px;margin:9px 0 0 20px;float:left;display:inline}
+
+.foot {height:49px;background:url(../images/menubg.gif) bottom repeat-x;text-align:center;line-height:49px}
+.bBack {width:130px;height:58px;background:url(../images/back1.jpg) no-repeat;display:inline;float:right;margin-right:50px;}
+.bBack:hover {background:url(../images/back2.jpg) no-repeat}
+
+
+.main{border:1px solid #bbb;border-top:1px solid #bbb;width:1023px;margin:0 auto;text-align:left;overflow:auto; zoom:1;}
+.leftP{width:180px;height:560px;float:left;background-color:#9dc2df;border:1px solid #7691a7}
+.rightP{width:830px;height:560px;float:left;}
+
+.setting {padding:40px 0px 9px;height:510px;width:180px; float:left;border:1px solid #89a9c2}
+.setting a{display:block;line-height:25px;padding-left:40px;color:#294267;height:25px}
+.setting a:hover {background:url(../images/arow.gif) #0271dc right center no-repeat ;color:#fff}
+.setting a img {margin-right:8px}
+
+
+.menu{width:488px;height:49px;float:right;margin-right:14px;display:inline}
+
+/*
+.menu .a0{width:102px;background:url(../images/back1.jpg) no-repeat}
+.menu .a0:hover{background:url(../images/back2.jpg) no-repeat}
+.menu a{text-align:center;display:block;float:left;height:49px;background:url(../images/menu1.jpg) no-repeat }
+.menu a:hover{background:url(../images/menu2.jpg) no-repeat }
+.menu .a1{width:93px}
+.menu .a2{width:115px;background-position:-93px}
+.menu .a2:hover{background-position:-93px}
+.menu .a3{width:88px;background-position:-208px}
+.menu .a3:hover{background-position:-208px}
+.menu .a4{width:87px;background-position:-296px}
+.menu .a4:hover{background-position:-296px}
+*/
+

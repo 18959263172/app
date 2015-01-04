@@ -1,0 +1,32 @@
+#ifndef Z_UART
+#define Z_UART
+#include<sys/types.h>
+#include<sys/stat.h>
+#include<fcntl.h>
+#include<termios.h>
+#include<stdio.h>
+#include<unistd.h>
+#include<string.h>
+
+using namespace std;
+//串口类
+typedef class  ASerial
+{
+  public:
+    int fd;
+    void init_serial(const char *path); 
+    int serial_read(int count,char *buf);
+    int serial_write(int count,char *buf);
+  private: 
+    struct termios m_uart1; 
+    struct termios old_cfg;
+} CSerial;
+
+#endif
+
+
+
+
+
+
+

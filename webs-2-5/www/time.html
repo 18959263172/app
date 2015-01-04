@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/setting.css" type="text/css" rel="stylesheet"></link>
+</head>
+<script language="javascript">
+
+var objXMLHttp ;
+var g_devtime = "2012-12-31 5:12:00";
+
+function onStateChange()
+{
+    if (objXMLHttp.readyState == 4)
+    {           
+        if (objXMLHttp.status == 200 || objXMLHttp.status == 0)
+        {
+            var objJSON, context;
+            context = objXMLHttp.responseText;
+//            alert(context);
+            var objJSON = eval( '(' + context + ')' );
+            g_devtime = objJSON.Time;
+            var devTime = document.getElementById("dev_time");
+            devTime.innerHTML = g_devtime;
+            objXMLHttp = null;            
+        }
+    }
+}
+
+function onLoad()
+{
+	displayHostTime();
+	displayDeviceTime();
+}
+
+function displayDeviceTime()
+{
+	if(window.XMLHttpRequest)
+	{
+		objXMLHttp = new XMLHttpRequest();
+	}
+	else
+	{
+		//for IE5 IE6
+		objXMLHttp = new ActiveObject("Microsoft.XMLHTTP");
+	}
+	if(objXMLHttp != null)
+	{
+		objXMLHttp.onreadystatechange = onStateChange;
+		objXMLHttp.open("GET", "/behemoth/gettime.cgi?a=" + Math.round(Math.random()*10000), true);
+		objXMLHttp.send(null);
+	}
+	else
+	{
+		alert("不支持XMLHTTP，请升级浏览器");
+	} 
+
+	var timeout = setTimeout( 'displayDeviceTimeout();', 1000);
+    var devTime = document.getElementById("dev_time");
+    devTime.innerHTML = g_devtime; 
+    var timeout = setTimeout( 'displayDeviceTime();', 1000);
+}
+
+function displayHostTime()
+{
+    var host_time    = new Date;
+    var year    = host_time.getFullYear();
+    var mon     = host_time.getMonth() + 1;
+    var day     = host_time.getDate();
+    var hour    = host_time.getHours();
+    var min     = host_time.getMinutes();
+    var sec     = host_time.getSeconds();
+
+    min = fixTime(min);
+    sec = fixTime(sec);
+
+    var ts = year + "-" + mon + "-" + day + " ";
+    ts += hour + ":" + min + ":" + sec;
+    var hostTime = document.getElementById("host_time");
+    hostTime.innerHTML =  ts;
+
+    var timeout = setTimeout( 'displayHostTime();', 900 );
+}
+
+function fixTime( ts )
+{
+    if(ts < 10)
+    {
+        ts = "0" + ts;
+    }
+    return ts;
+}
+
+function PostParameter()
+{
+	var url = "http://" + document.location.host + "/behemoth/settime.cgi";
+	var hostTime = document.getElementById("host_time");
+	var context =  "Time=" + hostTime.innerHTML;
+	
+//	alert(context);
+	
+	if(window.XMLHttpRequest)
+	{
+		objXMLHttp = new XMLHttpRequest();
+	}
+	else
+	{
+		//for IE5 IE6
+		objXMLHttp = new ActiveObject("Microsoft.XMLHTTP");
+	}
+	
+	if(objXMLHttp != null)
+	{
+		objXMLHttp.open("POST", url, false);  
+		objXMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		objXMLHttp.send(context);  	
+	}
+	else
+	{
+		alert("不支持XMLHTTP，请升级浏览器");
+	}
+}
+</script>
+
+<body onload="onLoad()">
+<div class="tP">
+    <div class="tPt">时间设置</div>
+    <div style="margin:60px 150px">
+        <div style="height: 60px"><b>采集器系统时间:</b>
+            <span style="position:absolute;left:300px" id="dev_time">2000-01-01 0:0:0</span>
+        </div>
+        <div style="height: 60px"><b>本地主机时间:</b>
+            <span style="position:absolute;left:300px" id="host_time">2012-12-31 5:12:00</span>
+        </div>        
+        
+        <div style="height: 60px;vertical-align:middle">
+            <span style="position:relative;top:8px" >  
+                <b>同步本地时间：</b>
+            </span>   
+            <span style="position:absolute;left:360px">
+                <input type="image" src="images/submit.gif" class="btn" onclick="PostParameter()">
+            </span>
+        </div>
+     </div>
+</div>
+</body>
+</html>

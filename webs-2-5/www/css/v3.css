@@ -1,0 +1,24 @@
+@import url(main.css);
+
+.main{border-top:4px solid #bbb;background-color:#36414b;width:979px;margin:0 auto;text-align:left;
+overflow:auto; zoom:1;text-align:center;}
+
+.toolbar{height:114px;background:url(../images/tbarBg.jpg) top center repeat-x #ebebeb}
+.toolbar table{height:114px}
+.size {width:352px}
+.size img{margin:0 10px}
+.size .chs{clear:both;background:url(../images/cBg.gif) bottom center no-repeat;width:295px;height:27px;margin:0 auto}
+.size .chs a{margin:6px 10px 0 10px;padding-left:25px;display:block;float:left;background:url(../images/c1.gif) left center no-repeat;}
+.size .chs a:hover{background:url(../images/c2.gif) left center no-repeat;}
+
+
+.bP{width:133px;background:url(../images/bBg.gif) center no-repeat;}
+.bP a{width:127px;height:41px;display:block;margin:1px}
+.bP .v{background:url(../images/v.jpg) no-repeat;}
+.bP .p{background:url(../images/p.jpg) no-repeat;}
+
+.selectP{padding-left:10px}
+.selectP img{display:block;margin:10px 0}
+.selectP select{line-height:22px;margin-right:8px;color:#fff;background-color:#3388cf}
+.selectP select option{color:#fff;background-color:#3388cf}
+.selectP .selectPt{margin:10px 0;line-height:24px}

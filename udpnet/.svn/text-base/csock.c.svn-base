@@ -1,0 +1,59 @@
+#include"csock.h"
+#include<stdio.h>
+
+//套接字初始化
+int csock::sock_init()
+{
+  portnum=632;
+
+  cfd = socket(AF_INET, SOCK_STREAM, 0);
+
+  if(-1 == cfd)
+    {
+      printf("socket fail ! \r\n");
+      return -1;
+    }
+
+  printf("socket ok !\r\n");
+
+  bzero(&s_add,sizeof(struct sockaddr_in));
+
+  s_add.sin_family=AF_INET;
+
+  s_add.sin_addr.s_addr= inet_addr("192.168.3.124");
+
+  s_add.sin_port=htons(portnum);
+
+  printf("s_addr = %#x ,port : %#x\r\n",s_add.sin_addr.s_addr,s_add.sin_port);
+
+  if(-1 == connect(cfd,(struct sockaddr *)(&s_add), sizeof(struct sockaddr)))
+ {    
+   printf("connect fail !\r\n");
+      return -1;
+    }
+  printf("connect ok !\r\n");
+}
+
+//网络发送函数
+
+void csock::sock_send(char *buf,int count)
+{
+  send(cfd,buf,count,0);
+}
+//网络接收函数
+void csock::sock_rcv(char *buf,int count)
+{
+  int n;
+  if(n=recv(cfd,buf,count,0)>0)
+    {
+      printf("receieved: %s  ",buf);
+    }
+}
+
+//套接字关闭
+void csock::sock_close()
+{
+  close(cfd);
+}
+
+

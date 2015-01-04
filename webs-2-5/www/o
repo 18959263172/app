@@ -1,0 +1,164 @@
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX# cd ..
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# ls
+asp.c	   ECOS       emfdb.o	 LYNX		    mime64.c  QNX4	  sockGen.c  uemf.o  value.c   webs.h	   www
+asp.o	   ej.h       form.c	 MACOSX		    mime64.o  readme.txt  sockGen.o  um.c    value.o   webs.h~	   wwwdemo
+balloc.c   ejIntrn.h  form.o	 Makefile	    mime.c    ringq.c	  sock.o     um.h    VXWORKS   webs.o
+balloc.o   ejlex.c    handler.c  Makefile~	    mime.o    ringq.o	  sym.c      um.o    webrom.c  websSSL.c
+CE	   ejlex.o    handler.o  matrixSSLSocket.c  misc.c    rom.c	  sym.o      umui.c  webrom.o  websSSL.h
+cgi.c	   ejparse.c  h.c	 matrixSSLSocket.h  misc.o    rom.o	  tags	     umui.o  webs.c    websuemf.c
+cgi.o	   ejparse.o  h.o	 md5c.c		    NW	      security.c  trace.txt  url.c   websda.c  websuemf.o
+default.c  emfdb.c    LINUX	 md5c.o		    page.c    security.o  uemf.c     url.o   websda.h  WIN
+default.o  emfdb.h    log.txt	 md5.h		    page.o    sock.c	  uemf.h     utils   websda.o  wsIntrn.h
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# cd www
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# ls
+home.htm
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www#
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# ls
+home.htm  o
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# cat home.htm 
+<html> <head>
+<title>Home Page</title>
+</head><body>
+Congratulations! The server is up and running.
+<p/>To browse the documentation and test the features of the server, run the application in demo mode by including the '-demo' option when invoking the webs executable.  On Windows enable demo mode by uncommenting the following line in WIN/main.c and recompiling:
+<pre style="font-family: Andale Mono, Lucida Console, Monaco, fixed, monospace; color: #000000; background-color: #eee;font-size: 12px;border: 1px dashed #999999;line-height: 14px;padding: 5px; width: 200px"><code>#define USE_DEMO_MODE 1
+</code></pre> 
+</body></html
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# make
+make: *** No targets specified and no makefile found.  Stop.
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# ls
+home.htm  o  #o#
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# make clean
+make: *** No rule to make target `clean'.  Stop.
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# ls
+home.htm  o  #o#
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/www# cd ..
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# ls
+asp.c	   ECOS       emfdb.o	 LYNX		    mime64.c  QNX4	  sockGen.c  uemf.o  value.c   webs.h	   www
+asp.o	   ej.h       form.c	 MACOSX		    mime64.o  readme.txt  sockGen.o  um.c    value.o   webs.h~	   wwwdemo
+balloc.c   ejIntrn.h  form.o	 Makefile	    mime.c    ringq.c	  sock.o     um.h    VXWORKS   webs.o
+balloc.o   ejlex.c    handler.c  Makefile~	    mime.o    ringq.o	  sym.c      um.o    webrom.c  websSSL.c
+CE	   ejlex.o    handler.o  matrixSSLSocket.c  misc.c    rom.c	  sym.o      umui.c  webrom.o  websSSL.h
+cgi.c	   ejparse.c  h.c	 matrixSSLSocket.h  misc.o    rom.o	  tags	     umui.o  webs.c    websuemf.c
+cgi.o	   ejparse.o  h.o	 md5c.c		    NW	      security.c  trace.txt  url.c   websda.c  websuemf.o
+default.c  emfdb.c    LINUX	 md5c.o		    page.c    security.o  uemf.c     url.o   websda.h  WIN
+default.o  emfdb.h    log.txt	 md5.h		    page.o    sock.c	  uemf.h     utils   websda.o  wsIntrn.h
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# make clena
+make: *** No rule to make target `clena'.  Stop.
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# make clean
+make -C ./LINUX clean
+make[1]: Entering directory `/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX'
+rm -f webs libwebs.a ../md5c.o ../asp.o ../balloc.o ../mime64.o ../cgi.o ../default.o  ../ejlex.o ../ejparse.o ../form.o ../h.o ../handler.o ../mime.o ../misc.o ../page.o ../ringq.o ../rom.o  ../sock.o ../sockGen.o ../security.o ../sym.o ../uemf.o ../url.o ../value.o ../um.o ../umui.o ../websda.o ../emfdb.o ../webrom.o ../webs.o ../websuemf.o
+make[1]: Leaving directory `/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX'
+[RM]	webs
+[RM]	libwebs.a
+[RM]	.//bin/webs
+[RM]	.//lib/libwebs.a
+[RM]	.//include/libwebs/*.h
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# make
+make -C ./LINUX webcomp
+make[1]: Entering directory `/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX'
+make[1]: `webcomp' is up to date.
+make[1]: Leaving directory `/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX'
+find ../www -name "*.*" > websfile
+./LINUX/webcomp ../www ./websfile > ./webrom.c
+rm ./websfile
+CC=gcc CFLAGS='' make -C ./LINUX all
+make[1]: Entering directory `/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX'
+gcc -c -o ../md5c.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../md5c.c
+gcc -c -o ../asp.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../asp.c
+gcc -c -o ../balloc.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../balloc.c
+gcc -c -o ../mime64.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../mime64.c
+gcc -c -o ../cgi.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../cgi.c
+gcc -c -o ../default.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../default.c
+gcc -c -o ../ejlex.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../ejlex.c
+gcc -c -o ../ejparse.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../ejparse.c
+gcc -c -o ../form.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../form.c
+gcc -c -o ../h.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../h.c
+gcc -c -o ../handler.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../handler.c
+gcc -c -o ../mime.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../mime.c
+gcc -c -o ../misc.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../misc.c
+gcc -c -o ../page.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../page.c
+gcc -c -o ../ringq.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../ringq.c
+gcc -c -o ../rom.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../rom.c
+gcc -c -o ../sock.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../sock.c
+gcc -c -o ../sockGen.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../sockGen.c
+gcc -c -o ../security.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../security.c
+gcc -c -o ../sym.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../sym.c
+gcc -c -o ../uemf.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../uemf.c
+gcc -c -o ../url.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../url.c
+gcc -c -o ../value.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../value.c
+gcc -c -o ../um.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../um.c
+gcc -c -o ../umui.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../umui.c
+gcc -c -o ../websda.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../websda.c
+gcc -c -o ../emfdb.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../emfdb.c
+gcc -c -o ../webrom.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../webrom.c
+gcc -c -o ../webs.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../webs.c
+gcc -c -o ../websuemf.o -Os  -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  ../websuemf.c
+ar rv libwebs.a ../md5c.o ../asp.o ../balloc.o ../mime64.o ../cgi.o ../default.o ../ejlex.o ../ejparse.o ../form.o ../h.o ../handler.o ../mime.o ../misc.o ../page.o ../ringq.o ../rom.o ../sock.o ../sockGen.o ../security.o ../sym.o ../uemf.o ../url.o ../value.o ../um.o ../umui.o ../websda.o ../emfdb.o ../webrom.o ../webs.o ../websuemf.o
+ar: creating libwebs.a
+a - ../md5c.o
+a - ../asp.o
+a - ../balloc.o
+a - ../mime64.o
+a - ../cgi.o
+a - ../default.o
+a - ../ejlex.o
+a - ../ejparse.o
+a - ../form.o
+a - ../h.o
+a - ../handler.o
+a - ../mime.o
+a - ../misc.o
+a - ../page.o
+a - ../ringq.o
+a - ../rom.o
+a - ../sock.o
+a - ../sockGen.o
+a - ../security.o
+a - ../sym.o
+a - ../uemf.o
+a - ../url.o
+a - ../value.o
+a - ../um.o
+a - ../umui.o
+a - ../websda.o
+a - ../emfdb.o
+a - ../webrom.o
+a - ../webs.o
+a - ../websuemf.o
+gcc -o webs -Os \
+		 -DWEBS -DOS="LINUX" -DLINUX -DWEBS_PAGE_ROM  -DDIGEST_ACCESS_SUPPORT   -I..  \
+		main.o libwebs.a   
+libwebs.a(cgi.o): In function `websGetCgiCommName':
+cgi.c:(.text+0x180): warning: the use of `tempnam' is dangerous, better use `mkstemp'
+make[1]: Leaving directory `/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX'
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# make main.o
+make: *** No rule to make target `main.o'.  Stop.
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# ls
+asp.c	   ECOS       emfdb.o	 LYNX		    mime64.c  QNX4	  sockGen.c  uemf.o  value.c   webs.h	   www
+asp.o	   ej.h       form.c	 MACOSX		    mime64.o  readme.txt  sockGen.o  um.c    value.o   webs.h~	   wwwdemo
+balloc.c   ejIntrn.h  form.o	 Makefile	    mime.c    ringq.c	  sock.o     um.h    VXWORKS   webs.o
+balloc.o   ejlex.c    handler.c  Makefile~	    mime.o    ringq.o	  sym.c      um.o    webrom.c  websSSL.c
+CE	   ejlex.o    handler.o  matrixSSLSocket.c  misc.c    rom.c	  sym.o      umui.c  webrom.o  websSSL.h
+cgi.c	   ejparse.c  h.c	 matrixSSLSocket.h  misc.o    rom.o	  tags	     umui.o  webs.c    websuemf.c
+cgi.o	   ejparse.o  h.o	 md5c.c		    NW	      security.c  trace.txt  url.c   websda.c  websuemf.o
+default.c  emfdb.c    LINUX	 md5c.o		    page.c    security.o  uemf.c     url.o   websda.h  WIN
+default.o  emfdb.h    log.txt	 md5.h		    page.o    sock.c	  uemf.h     utils   websda.o  wsIntrn.h
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# ./webs
+bash: ./webs: No such file or directory
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# ls
+asp.c	   ECOS       emfdb.o	 LYNX		    mime64.c  QNX4	  sockGen.c  uemf.o  value.c   webs.h	   www
+asp.o	   ej.h       form.c	 MACOSX		    mime64.o  readme.txt  sockGen.o  um.c    value.o   webs.h~	   wwwdemo
+balloc.c   ejIntrn.h  form.o	 Makefile	    mime.c    ringq.c	  sock.o     um.h    VXWORKS   webs.o
+balloc.o   ejlex.c    handler.c  Makefile~	    mime.o    ringq.o	  sym.c      um.o    webrom.c  websSSL.c
+CE	   ejlex.o    handler.o  matrixSSLSocket.c  misc.c    rom.c	  sym.o      umui.c  webrom.o  websSSL.h
+cgi.c	   ejparse.c  h.c	 matrixSSLSocket.h  misc.o    rom.o	  tags	     umui.o  webs.c    websuemf.c
+cgi.o	   ejparse.o  h.o	 md5c.c		    NW	      security.c  trace.txt  url.c   websda.c  websuemf.o
+default.c  emfdb.c    LINUX	 md5c.o		    page.c    security.o  uemf.c     url.o   websda.h  WIN
+default.o  emfdb.h    log.txt	 md5.h		    page.o    sock.c	  uemf.h     utils   websda.o  wsIntrn.h
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5# cd LINUX/
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX# ls
+certSrv.pem  log.txt  main.c~  Makefile   privkeySrv.pem  webcomp     webrom.c	websfile
+libwebs.a    main.c   main.o   Makefile~  trace.txt	  webcomp.sh  webs
+root@ubuntu:/home/a/rootfs/recvsend2/app/d_record_pb_base/webs-2-5/LINUX# ./webs
