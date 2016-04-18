@@ -1,0 +1,373 @@
+root@ubuntu:~# make
+Makefile:3: *** 遗漏分隔符 。 停止。
+root@ubuntu:~# gcc main.c
+gcc: main.c: 没有那个文件或目录
+gcc: no input files
+root@ubuntu:~# ls
+linux-2.6.31.8	my     patches			 公共的      视频  下载
+locat		new.   u-boot-1.1.4		 嵌入式资料  图片  音乐
+Makefile	new.~  u-boot-3.5.9_for_88f6282  模板	     文档  桌面
+root@ubuntu:~# 
+root@ubuntu:~# 
+root@ubuntu:~# cd /nfsd/welcom/client/
+root@ubuntu:/nfsd/welcom/client# l
+l：找不到命令
+root@ubuntu:/nfsd/welcom/client# sls
+未找到 'sls' 命令，有19 个相似命令
+sls：找不到命令
+root@ubuntu:/nfsd/welcom/client# ls
+a.out  b.out  main  main.c  main.c~  makefile  makefile~
+root@ubuntu:/nfsd/welcom/client# gcc main.c
+root@ubuntu:/nfsd/welcom/client# ls
+a.out  b.out  main  main.c  main.c~  makefile  makefile~
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x201a8c0 ,port : 0x3806
+s
+s
+connect fail !
+root@ubuntu:/nfsd/welcom/client# s：找不到命令
+root@ubuntu:/nfsd/welcom/client# s：找不到命令
+root@ubuntu:/nfsd/welcom/client# s
+s：找不到命令
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# gcc main.c
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x201a8c0 ,port : 0x3806
+connect fail !
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x201a8c0 ,port : 0x3806
+connect fail !
+root@ubuntu:/nfsd/welcom/client# s
+
+s：找不到命令
+root@ubuntu:/nfsd/welcom/client# root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# gcc main.c
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x201a8c0 ,port : 0x3206
+connect fail !
+root@ubuntu:/nfsd/welcom/client# gcc main.c
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x7c03a8c0 ,port : 0x3206
+connect fail !
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x7c03a8c0 ,port : 0x3206
+connect fail !
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x7c03a8c0 ,port : 0x3206
+connect fail !
+root@ubuntu:/nfsd/welcom/client# gcc main.c
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x7c03a8c0 ,port : 0x7802
+connect fail !
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x7c03a8c0 ,port : 0x7802
+connect ok !
+connect ok !
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# gcc main.c
+root@ubuntu:/nfsd/welcom/client# ls
+a.out  b.out  main  main.c  main.c~  makefile  makefile~
+root@ubuntu:/nfsd/welcom/client# ./a.out 
+Hello,welcome to client !
+socket ok !
+s_addr = 0x7c03a8c0 ,port : 0x7802
+connect fail !
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# arm-mv
+
+arm-mv：找不到命令
+root@ubuntu:/nfsd/welcom/client# root@ubuntu:/nfsd/welcom/client# arm-
+
+arm-：找不到命令
+root@ubuntu:/nfsd/welcom/client# root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# arm-
+
+arm-：找不到命令
+root@ubuntu:/nfsd/welcom/client# root@ubuntu:/nfsd/welcom/client# 
+root@ubuntu:/nfsd/welcom/client# ls
+a.out  csock.c	 csock.h   main    main.c~   makefile~	Makefile~
+b.out  csock.c~  csock.h~  main.c  makefile  Makefile
+root@ubuntu:/nfsd/welcom/client# cd ..
+root@ubuntu:/nfsd/welcom# ls
+client	Internet  pci  test
+root@ubuntu:/nfsd/welcom# cd test/
+root@ubuntu:/nfsd/welcom/test# ls
+makefile   #new.c #  new.c~  uart.c~  uart.h~	  uart_test
+makefile~  new.c     uart.c  uart.h   uart.h.gch
+root@ubuntu:/nfsd/welcom/test# cd ..
+root@ubuntu:/nfsd/welcom# ls
+client	Internet  pci  test
+root@ubuntu:/nfsd/welcom# cd client/
+root@ubuntu:/nfsd/welcom/client# ls
+a.out  csock.c	 csock.h   main    main.c~   makefile~	Makefile~
+b.out  csock.c~  csock.h~  main.c  makefile  Makefile
+root@ubuntu:/nfsd/welcom/client# make
+make: “main”是最新的。
+root@ubuntu:/nfsd/welcom/client# ls
+a.out  csock.c	 csock.h   main    main.c~   makefile~	Makefile~
+b.out  csock.c~  csock.h~  main.c  makefile  Makefile
+root@ubuntu:/nfsd/welcom/client# rm makefile
+root@ubuntu:/nfsd/welcom/client# make
+{HOST_CC} -o main main.c csock.c 
+/bin/sh: {HOST_CC}: not found
+make: *** [test] 错误 127
+root@ubuntu:/nfsd/welcom/client# arm-mv5sft-linux-gnueabi-g++
+arm-mv5sft-linux-gnueabi-g++: no input files
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+In file included from main.c:15:
+csock.h:1:2: error: invalid preprocessing directive #ifndefine
+csock.h:22:2: error: #endif without #if
+main.c: In function 'int main()':
+main.c:32: error: 'cfd' was not declared in this scope
+In file included from csock.c:1:
+csock.h:1:2: error: invalid preprocessing directive #ifndefine
+csock.h:22:2: error: #endif without #if
+csock.c: In member function 'void csock::sock_init()':
+csock.c:9: error: 'printf' was not declared in this scope
+csock.c:10: error: return-statement with a value, in function returning 'void'
+csock.c:12: error: 'printf' was not declared in this scope
+csock.c:14: error: 's_add' was not declared in this scope
+csock.c:14: error: 'bzero' was not declared in this scope
+csock.c:27: error: return-statement with a value, in function returning 'void'
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:33: error: expected `)' before ';' token
+csock.c:33: error: expected primary-expression before ')' token
+csock.c:33: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:36: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:17: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# csock.c:12: error: 'printf' was not declared in this scope
+csock.c:12:：找不到命令
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+main.c: In function 'int main()':
+main.c:32: error: 'cfd' was not declared in this scope
+csock.c: In member function 'void csock::sock_init()':
+csock.c:9: error: 'printf' was not declared in this scope
+csock.c:10: error: return-statement with a value, in function returning 'void'
+csock.c:12: error: 'printf' was not declared in this scope
+csock.c:14: error: 's_add' was not declared in this scope
+csock.c:14: error: 'bzero' was not declared in this scope
+csock.c:27: error: return-statement with a value, in function returning 'void'
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:33: error: expected `)' before ';' token
+csock.c:33: error: expected primary-expression before ')' token
+csock.c:33: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:36: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:17: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# csock.c:10: error: return-statement with a value, in function returning 'void'
+csock.c:10:：找不到命令
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'void csock::sock_init()':
+csock.c:9: error: 'printf' was not declared in this scope
+csock.c:10: error: return-statement with a value, in function returning 'void'
+csock.c:12: error: 'printf' was not declared in this scope
+csock.c:14: error: 's_add' was not declared in this scope
+csock.c:14: error: 'bzero' was not declared in this scope
+csock.c:27: error: return-statement with a value, in function returning 'void'
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:33: error: expected `)' before ';' token
+csock.c:33: error: expected primary-expression before ')' token
+csock.c:33: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:36: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:17: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# csock.c:14: error: 'bzero' was not declared in this scope
+csock.c:14:：找不到命令
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'void csock::sock_init()':
+csock.c:11: error: return-statement with a value, in function returning 'void'
+csock.c:15: error: 's_add' was not declared in this scope
+csock.c:15: error: 'bzero' was not declared in this scope
+csock.c:28: error: return-statement with a value, in function returning 'void'
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:17: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# csock.c:15: error: 'bzero' was not declared in this scope
+csock.c:15:：找不到命令
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c:4: error: prototype for 'int csock::sock_init()' does not match any in class 'csock'm
+csock.h:15: error: candidate is: void csock::sock_init()
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:17: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# csock.c:4: error: prototype for 'int csock::sock_init()' does not match any in class 'csock'm
+csock.c:4:：找不到命令
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'int csock::sock_init()':
+csock.c:15: error: 's_add' was not declared in this scope
+csock.c:15: error: 'bzero' was not declared in this scope
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:17: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# csock.c:15: error: 's_add' was not declared in this scope
+csock.c:15:：找不到命令
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'int csock::sock_init()':
+csock.c:15: error: 's_add' was not declared in this scope
+csock.c:15: error: 'bzero' was not declared in this scope
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:19: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'int csock::sock_init()':
+csock.c:15: error: 's_add' was not declared in this scope
+csock.c:15: error: 'bzero' was not declared in this scope
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:19: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+In file included from main.c:15:
+csock.h:9:19: error: string.j: No such file or directory
+In file included from csock.c:1:
+csock.h:9:19: error: string.j: No such file or directory
+csock.c: In member function 'int csock::sock_init()':
+csock.c:15: error: 's_add' was not declared in this scope
+csock.c:15: error: 'bzero' was not declared in this scope
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:19: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'int csock::sock_init()':
+csock.c:15: error: 's_add' was not declared in this scope
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:19: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'int csock::sock_init()':
+csock.c:17: error: 's_add' was not declared in this scope
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:19: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'int csock::sock_init()':
+csock.c:17: error: 's_add' was not declared in this scope
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:19: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:34: error: expected `)' before ';' token
+csock.c:34: error: expected primary-expression before ')' token
+csock.c:34: error: expected `;' before ')' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:19: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c: In member function 'void csock::sock_send(char*, int)':
+csock.c:36: error: expected `;' before '}' token
+csock.c: At global scope:
+csock.c:37: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:19: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+csock.c:36: error: prototype for 'void csock::sock_rcv()' does not match any in class 'csock'
+csock.h:19: error: candidate is: void csock::sock_rcv(char*, int)
+make: *** [test] 错误 1
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+root@ubuntu:/nfsd/welcom/client# ls
+a.out  csock.c	 csock.h   main    main.c~    Makefile	 y    y~
+b.out  csock.c~  csock.h~  main.c  makefile~  Makefile~  #y#
+root@ubuntu:/nfsd/welcom/client# make clean
+rm -f main	
+root@ubuntu:/nfsd/welcom/client# ls
+a.out  csock.c	 csock.h   main.c   makefile~  Makefile~  #y#
+b.out  csock.c~  csock.h~  main.c~  Makefile   y	  y~
+root@ubuntu:/nfsd/welcom/client# make
+arm-mv5sft-linux-gnueabi-g++ -o main main.c csock.c 
+root@ubuntu:/nfsd/welcom/client# ls
+a.out  csock.c	 csock.h   main    main.c~    Makefile	 y    y~
+b.out  csock.c~  csock.h~  main.c  makefile~  Makefile~  #y#
+root@ubuntu:/nfsd/welcom/client#  

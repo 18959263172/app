@@ -1,0 +1,27 @@
+#ifndef C_SOCK
+#define CS_SOCK
+#include<sys/types.h>
+#include<sys/socket.h>
+#include<netinet/in.h>
+#include<unistd.h>
+#include<arpa/inet.h>
+#include<stdlib.h>
+#include<string.h>
+
+typedef class csock
+{
+  unsigned short portnum;
+  int cfd;
+  struct sockaddr_in s_add,c_addr;
+ public:
+  int sock_init();
+  void sock_send(char *buf,int count);
+  void sock_rcv(char *buf,int count);
+  void sock_close();
+}zcsock;
+#endif
+
+
+
+
+

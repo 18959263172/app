@@ -82,6 +82,10 @@ void dg_cli(int sockfd,const struct sockaddr *servaddr,socklen_t serlen)
 /*
   @author 
   @function
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
 */
 ////////////////////////////////////////////////
 int main(int argc,char **argv)

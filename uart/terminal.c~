@@ -10,14 +10,22 @@
 #include"uart.h"
 #include <sys/types.h>
 #include <regex.h>
+<<<<<<< HEAD
 #include<errno.h>
+=======
+
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
 /*
   @brief run a terminal
 */
 void terminal::terminal_run()
 {
+<<<<<<< HEAD
 
 
+=======
+    
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
 }
 /*
   @brief 
@@ -51,9 +59,15 @@ void getFiles(char * dir, vector<string>& files)
     const char *pattern="ttyPS*";
     int i=0;
     char filename[2048];
+<<<<<<< HEAD
         //chdir("..");
         //chdir(".");
     regcomp(&reg,pattern,cflags);
+=======
+
+    regcomp(&reg,pattern,cflags);
+    
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
     if((dp = opendir(dir)) == NULL) 
     {
         fprintf(stderr,"%s\r\n", dir);
@@ -61,23 +75,38 @@ void getFiles(char * dir, vector<string>& files)
     }
         //chdir(dir);
         //The recursive traversal of the directory tree structure
+<<<<<<< HEAD
     while(entry=readdir(dp))
     {
         printf("\r\n%d",i++);
+=======
+    while((entry = readdir(dp))!= NULL)
+    {
+        printf("%d",i++);
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
             //printf("%s\n", entry->d_name);  
             //statbuf initialization
         lstat(entry->d_name,&statbuf);
             //printf("%s\n", entry->d_name);
         if(S_ISDIR(statbuf.st_mode)) 
         {
+<<<<<<< HEAD
                 //if it is a catlog???
             if(strcmp(".",entry->d_name) ==0||strcmp("..",entry->d_name)==0) continue;
                 //if it is a catlog,rescan it 
                 //getFiles(entry->d_name,files);
+=======
+            if(strcmp(".",entry->d_name) ==0||strcmp("..",entry->d_name)==0) continue;
+            //if it is a catlog,rescan it 
+            
+            //getFiles(entry->d_name,files);
+        
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
         }
         else
         {
             lstat(entry->d_name,&statbuf);
+<<<<<<< HEAD
                 //printf("%s\n", entry->d_name);
             sprintf(filename,"%s/%s",dir,entry->d_name);
             files.push_back(filename);
@@ -96,6 +125,28 @@ void getFiles(char * dir, vector<string>& files)
           printf("%s\r\n",files[i].c_str());
           }
         }*/
+=======
+            
+            printf("%s\n", entry->d_name);  
+            
+            sprintf(filename,"%s/%s",dir,entry->d_name);
+            
+            files.push_back(filename);
+        }
+    }
+    
+    for(int i =0;i <files.size();i++)
+    {
+        printf("%s \n",files[i].c_str());
+        
+        status =regexec(&reg,files[i].c_str(),nmatch,pmatch,0);
+        
+        if(status==0)
+        {
+            printf("%s\r\n",files[i].c_str());
+        }
+    }
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
         /*
           int size = files.size();
           for(int i =0;i < size;i++)
@@ -103,10 +154,15 @@ void getFiles(char * dir, vector<string>& files)
              printf("%s \n",files[i].c_str());
           }
           chdir("..");
+<<<<<<< HEAD
         */
     chdir("..");
     printf("change the directory to /mnt \r\n");
     closedir(dp);
+=======
+          closedir(dp);
+        */
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
 }
 /*
   @brief 
@@ -115,12 +171,19 @@ int show_file()
 {
     vector<string>files;
     int size;
+<<<<<<< HEAD
     getFiles("/dev/",files);
+=======
+    getFiles("/",files);
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
     size = files.size();
     printf("the length of vector is %d\r\n",size);
     for(int i =0;i <size;i++)
         printf("%s \n",files[i].c_str());
+<<<<<<< HEAD
     
+=======
+>>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
 }
 /*
 
