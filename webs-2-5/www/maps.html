@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">  
+<html>  
+<head>  
+<title>google map v3</title>  
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<script language="javascript">
+function onLoad()
+{
+var latlng = new google.maps.LatLng(24.1, 118.0);
+// Creating an object literal containing the properties we want to pass to the map
+var options = {
+  zoom: 10,
+  center: latlng,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+}; 
+// Calling the constructor, thereby initializing the map
+var map = new google.maps.Map(document.getElementById('maps'), options);
+
+var point = new google.maps.LatLng(24.1,118.01);
+map.addOverlay(GPolyline.Circle(point,300));
+}
+</script>
+
+
+</head>  
+<body onload="onLoad()">
+    <div id="maps" style="width: 600px; height: 500px;"></div>  
+</body>  
+</html>  

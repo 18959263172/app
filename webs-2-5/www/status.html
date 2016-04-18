@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>海西通讯工程中心--GNSS采集器</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/setting.css" type="text/css" rel="stylesheet"></link>
+</head>
+<script language="javascript">
+var g_bar_index = 0;
+var g_battery_state = 0;
+var objXMLHttp;
+function onStateChange()
+{
+    if (objXMLHttp.readyState == 4)
+    {           
+        if (objXMLHttp.status == 200 || objXMLHttp.status == 0)
+        {
+            var objJSON, context; 
+            context = objXMLHttp.responseText;
+            //alert(context);
+            var objJSON = eval( '(' + context + ')' );
+            var sn = document.getElementById("sn");
+            sn.innerHTML=objJSON.Diskid;
+            objXMLHttp = null;
+        }
+    }
+}	
+	
+function onLoad()
+{
+    setAciton(1);
+    setBatteryVal(4);
+    setBatteryState(g_battery_state);
+    bar_index = 0;
+    onTimer();
+	if(window.XMLHttpRequest)
+	{
+		objXMLHttp = new XMLHttpRequest();
+	}
+	else
+	{
+		//for IE5 IE6
+		objXMLHttp = new ActiveObject("Microsoft.XMLHTTP");
+	}
+	
+	if(objXMLHttp != null)
+	{
+		objXMLHttp.onreadystatechange = onStateChange;
+		objXMLHttp.open("GET", "/behemoth/getdiskid.cgi?a=" + Math.round(Math.random()*10000), true);
+		objXMLHttp.send(null);
+	}
+	else
+	{
+		alert("不支持XMLHTTP，请升级浏览器");
+	}	
+}
+function onTimer()
+{
+	  charge();
+	  var timeout = setTimeout( 'onTimer();', 500 );
+}
+function setBatteryState( _state )
+{
+	if(_state == 1)
+	{
+		document.getElementById("power_state").innerHTML = " 放  电 ";
+	}
+	else
+	{
+		document.getElementById("power_state").innerHTML = " 充  电 ";
+	}
+}
+function charge()
+{
+   var _span;
+    for(i = 0; i < bar_index; i++)
+    {
+    	 _span = document.getElementById("bar" + i);   
+    	 _span.style.backgroundColor = "black";
+    }
+       
+    for(i = bar_index; i < 10; i++)
+    {
+    	 _span = document.getElementById("bar" + i);   
+    	 _span.style.backgroundColor = "transparent";
+    }
+    bar_index = (bar_index + 1) % 11;
+}
+function setBatteryVal(_pers)
+{
+    var _span;
+    _span = document.getElementById("battery_val");  
+    _span.innerHTML = _pers + "0%";
+    if(g_battery_state == 0)
+    {
+        for(i = _pers; i < 10; i++)
+        {
+    	       _span = document.getElementById("bar" + i);   
+    	     _span.style.backgroundColor = "transparent"
+         }
+    }
+}
+
+function setAciton(_act)
+{
+    var spanState = document.getElementById("state");
+
+    if(_act == 0)
+    { /* idle */
+        spanState.innerHTML = "空 闲";
+    }
+    else if(_act == 1)
+    {/* capture */
+        spanState.innerHTML = "正 在 采 集";
+    }
+    else if(_act == 2)
+    {/* playback*/
+		spanState.innerHTML = "正 在 回 放";
+    }
+}
+</script>
+<body onload = "onLoad()">
+<div class="tP">
+	<div class="tPt">设备状态</div>
+    <div style="margin:40px 60px">
+        <div style="height: 30px"><b>采集器型号:</b>
+            <span style="position:absolute;left:200px" id="model">WS-RPS101</span>
+        </div>
+        <div style="height: 30px"><b>序列号:</b>
+            <span style="position:absolute;left:200px" id="sn">20121231000001</span>
+        </div>
+        <div style="height: 30px"><b>版本号:</b>
+            <span style="position:absolute;left:200px" id="version">2.22</span>
+        </div>
+ 		<div style="height: 30px">
+			        <hr style="color: #808080" width="90%" size="1">
+		</div>		
+		<div style="height: 30px"><b>当前工作状态:</b>
+            <span style="position:absolute;left:200px" id="state"></span>
+        </div>
+         <div style="height: 30px"><b>充放电状态:</b>
+            <span style="position:absolute;left:200px" id="power_state">放电</span>
+        </div>
+        <div style="height: 30px;vertical-align:middle">
+            <span><b>电池电量:</b></span>
+
+            <span style="position:absolute;left:400px"  id="battery_val">70%</span>
+        </div>
+        <div style="position:absolute;left:200px;top:276px;border:1px solid black;padding:1px 0 1px 0;font-size:4px">
+                <span id="bar0" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+                <span id="bar1" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+                <span id="bar2" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+                <span id="bar3" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+                <span id="bar4" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+                <span id="bar5" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+                <span id="bar6" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+                <span id="bar7" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+                <span id="bar8" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+                <span id="bar9" style="background-color:black;height:50px;padding:1px">&nbsp;&nbsp;</span>
+               
+         </div>            
+ 		<div style="height: 30px">
+			        <hr style="color: #808080" width="90%" size="1">
+		</div>        
+
+        <div style="height: 30px"><b>公司名称:</b>
+            <span style="position:absolute;left:200px" id="corp_name">深圳市星芯趋势科技有限公司</span>		
+        </div>
+        <div style="height: 30px"><b>公司地址:</b>
+             <span style="position:absolute;left:200px" id="corp_addr">深圳市福田区上沙科技园17栋313室</span>		
+        </div>
+        <div style="height: 30px"></div>
+        <div>        
+            <span><b>电话:</b></span>
+            <span style="position:absolute;left:200px" id="tel">0755-82555076</span>
+            <span style="position:absolute;left:350px"><b>传真:</b></span>
+            <span style="position:absolute;left:450px" id="trans">0755-82555076</span>
+        </div>	   
+</div>
+</body>
+</html>

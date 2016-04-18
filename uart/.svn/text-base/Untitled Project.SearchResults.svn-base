@@ -1,0 +1,4 @@
+---- serial_write Matches (3 in 3 files) ----
+New.c:  m_uart1.serial_write(16,"welcome wece ");
+Uart.c:int ASerial::serial_write(int count,const char *buf)
+Uart.h:  int serial_write(int count,const char *buf);

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/setting.css" type="text/css" rel="stylesheet"></link>
+</head>
+<script language="javascript">
+	
+var objXMLHttp;
+
+function onStateChange()
+{
+    if (objXMLHttp.readyState == 4)
+    {           
+        if (objXMLHttp.status == 200 || objXMLHttp.status == 0)
+        {
+            var objJSON, context; 
+            context = objXMLHttp.responseText;
+            //alert(context);
+            var objJSON = eval( '(' + context + ')' );
+            setAciton( objJSON );
+            objXMLHttp = null;
+        }
+    }
+}
+
+function onLoad()
+{
+	if(window.XMLHttpRequest)
+	{
+		objXMLHttp = new XMLHttpRequest();
+	}
+	else
+	{
+		//for IE5 IE6
+		objXMLHttp = new ActiveObject("Microsoft.XMLHTTP");
+	}
+	
+	if(objXMLHttp != null)
+	{
+		objXMLHttp.onreadystatechange = onStateChange;
+		objXMLHttp.open("GET", "/behemoth/capture.cgi?a=" + Math.round(Math.random()*10000), true);
+		objXMLHttp.send(null);
+	}
+	else
+	{
+		alert("不支持XMLHTTP，请升级浏览器");
+	}
+
+}		
+
+function setAciton(objJSON)
+{
+    var spanState = document.getElementById("state");
+    var spanAction = document.getElementById("action");
+    var spanActName = document.getElementById("action_name");
+    var spanStorage = document.getElementById("storage");
+    
+    if(objJSON.State.toUpperCase() == "IDLE")
+    { /* idle */
+        spanState.innerHTML = "空 闲";
+        spanAction.style.display = "";
+        spanActName.innerHTML = "<b>采 集 信 号:</b>";
+    }
+    else if(objJSON.State.toUpperCase() == "CAPTURE")
+    {/* capture */
+        spanState.innerHTML = "正 在 采 集";
+        spanAction.style.display = "";
+        spanActName.innerHTML = "<b>停 止 采 集:</b>";
+    }
+    else if(objJSON.State.toUpperCase() == "PLAYBACK")
+    {/* playback*/
+        spanState.innerHTML = "正 在 回 放";
+        spanAction.style.display = "none";
+    }
+    spanStorage.innerHTML = objJSON.Storage;
+    document.getElementById("Chan_GPS").checked = true;
+    document.getElementById("Chan_BD").checked  = false;    
+     
+    return;
+}
+
+function onCapture()
+{	
+	var chan = 0;
+	var url = "http://" + document.location.host + "/behemoth/capture.cgi";
+	var context =  "Action=" + "Capture" + '&' ;
+	context     += "Bits=" + document.getElementById("Quantization").value + '&';
+	context     += "SampleRate=" + document.getElementById("SampleRate").value + '&';
+	context     += "ClkRef=" + document.getElementById("ClkRef").value + '&';
+	if(document.getElementById("Chan_GPS").checked )
+	{
+		chan += 1;
+	}
+	if(document.getElementById("Chan_BD").checked)
+	{
+		chan += 2;
+	}
+		
+	context     += "Chan=" + chan;
+//	alert(context);
+	
+	if(window.XMLHttpRequest)
+	{
+		objXMLHttp = new XMLHttpRequest();
+	}
+	else
+	{
+		//for IE5 IE6
+		objXMLHttp = new ActiveObject("Microsoft.XMLHTTP");
+	}
+	
+	if(objXMLHttp != null)
+	{
+		objXMLHttp.open("POST", url, false);  
+		objXMLHttp.onreadystatechange = onStateChange;
+		objXMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		objXMLHttp.send(context);  	
+	}
+	else
+	{
+		alert("不支持XMLHTTP，请升级浏览器");
+	}
+		
+}
+</script>
+
+<body onload="onLoad()">
+<div class="tP">
+		 <div class="tPt">信号采集</div>
+    <div style="margin:60px 120px">   
+        <div style="height: 45px"><b>当前状态:</b>
+            <span style="position:absolute;left:300px" id="state"></span>
+        </div>
+        <div style="height: 45px"><b>磁盘空间:</b>
+            <span style="position:absolute;left:300px" id="storage">500.00GB</span>
+        </div>        
+        <div style="height: 45px"><b>比特位数:</b>
+		    <span style="position:absolute;left:300px">
+                <select size="1" id="Quantization">
+                    <option value="4">4bits</option>   
+                    <option value="8" selected>8bits</option>
+                </select>	
+            </span>	   
+        </div>      
+        <div style="height: 45px"><b>采样率:</b>
+			<span style="position:absolute;left:300px">
+                <select size="1" id="SampleRate">
+                    <option value="4">4Mb</option>   
+                    <option value="8" selected>8Mb</option>
+                </select>	
+            </span>	   
+        </div>
+        <div style="height: 45px"><b>采样通道:</b>
+			<span style="position:absolute;left:300px">
+				<input type="checkbox" name="channel" id="Chan_GPS" checked>GPS L1<br>
+			</span>
+			<span style="position:absolute;left:400px">
+				<input type="checkbox" name="chennel" id="Chan_BD">北斗 B1<br>
+            </span>	   
+        </div>
+        <div style="height: 45px"><b>时钟参考:</b>
+ 			<span style="position:absolute;left:300px">
+                <select size="1" id="ClkRef">
+                    <option value="0" selected>内参考</option>   
+                    <option value="1">外参考</option>
+                </select>	
+            </span>	  
+        </div>		
+        <div style="margin-top:30px; height: 60px" id="action">
+		<span style="position:relative;top:8px" id="action_name"></span>
+        <span style="position:absolute;left:300px">
+            <input type="image" src="images/submit.gif" class="btn" onclick="onCapture()">
+        </span>
+        </div>
+     </div>
+</div>
+</body>
+</html>

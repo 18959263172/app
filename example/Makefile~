@@ -1,0 +1,4 @@
+obj= test_time
+objtimer= test_timer.c timer.c
+all:
+	gcc ${objtimer} -o $(obj)

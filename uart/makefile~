@@ -1,0 +1,11 @@
+CC=arm-xilinx-linux-gnueabi-g++
+
+TARGET_SRC=/nfsd/welcom/debug
+
+TARGET_NAME=uart_test
+
+${TARGET_NAME}:
+	${CC} -o uart_test uart.c terminal.c new.c	 
+clean:
+	rm -f a.out uart.o uart_test
+

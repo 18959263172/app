@@ -1,0 +1,2368 @@
+PetaLinux environment set to '/home/zcy/petalinux-v2013.10-final'
+INFO: Checking free disk space
+INFO: Checking installed tools
+INFO: Checking installed development libraries
+INFO: Checking network and other services
+WARNING: No tftp server found - please refer to "PetaLinux SDK Installation Guide" for its impact and solution
+bash: /home/zcy/zynq/petalinux-v2013.10-final/settings.sh: 没有那个文件或目录
+root@zcy-virtual-machine:~# make all
+make: *** 没有规则可以创建目标“all”。 停止。
+root@zcy-virtual-machine:~# rm test_time
+rm: 无法删除"test_time": 没有那个文件或目录
+root@zcy-virtual-machine:~# ls
+aliyun      drone-master  lxapp     project    third_party  视频  下载
+app-master  go            main      README.md  公共的       图片  音乐
+defs        include       Makefile  src        模板         文档  桌面
+root@zcy-virtual-machine:~# make all
+make: *** 没有规则可以创建目标“all”。 停止。
+root@zcy-virtual-machine:~# ls
+aliyun      drone-master  lxapp     project    third_party  视频  下载
+app-master  go            main      README.md  公共的       图片  音乐
+defs        include       Makefile  src        模板         文档  桌面
+root@zcy-virtual-machine:~# make all
+make: *** 没有规则可以创建目标“all”。 停止。
+root@zcy-virtual-machine:~# make all
+make: *** 没有规则可以创建目标“all”。 停止。
+root@zcy-virtual-machine:~# ls
+aliyun      drone-master  lxapp     project    third_party  视频  下载
+app-master  go            main      README.md  公共的       图片  音乐
+defs        include       Makefile  src        模板         文档  桌面
+root@zcy-virtual-machine:~# make all
+make: *** 没有规则可以创建目标“all”。 停止。
+root@zcy-virtual-machine:~# ls
+aliyun      drone-master  lxapp     project    third_party  视频  下载
+app-master  go            main      README.md  公共的       图片  音乐
+defs        include       Makefile  src        模板         文档  桌面
+root@zcy-virtual-machine:~# cd app-master
+root@zcy-virtual-machine:~/app-master# ls
+client.c~  csock.h~         main.c~    socket.c     tick.h~   udptrans.c~
+code.c~    example          Makefile   socket.c~    timer.c   webs-2-5
+csock.c    file_manager.c~  Makefile~  test_udp.c   timer.c~
+csock.c~   inc              server.c~  test_udp.c~  timer.h
+csock.h    main.c           socket     ticket.c~    uart
+root@zcy-virtual-machine:~/app-master# cd example
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+timer.c:41:5: error: conflicting types for ‘init_timer’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *da) 
+     ^
+In file included from timer.c:6:0:
+timer.h:6:5: note: previous declaration of ‘init_timer’ was here
+ int init_timer(int sec,int usec);
+     ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+timer.c:51:11: error: ‘dat’ undeclared (first use in this function)
+     g_dat=dat;
+           ^
+timer.c:51:11: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+In file included from test_time.c:1:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+timer.h:6:34: error: expected identifier or ‘(’ before ‘)’ token
+ int init_timer(int sec,int usec,;);
+                                  ^
+In file included from timer.c:6:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+timer.h:6:34: error: expected identifier or ‘(’ before ‘)’ token
+ int init_timer(int sec,int usec,;);
+                                  ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+timer.c:51:11: error: ‘dat’ undeclared (first use in this function)
+     g_dat=dat;
+           ^
+timer.c:51:11: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+In file included from test_time.c:1:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+timer.h:6:34: error: expected identifier or ‘(’ before ‘)’ token
+ int init_timer(int sec,int usec,;);
+                                  ^
+In file included from timer.c:6:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+timer.h:6:34: error: expected identifier or ‘(’ before ‘)’ token
+ int init_timer(int sec,int usec,;);
+                                  ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+timer.c:51:11: error: ‘dat’ undeclared (first use in this function)
+     g_dat=dat;
+           ^
+timer.c:51:11: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+In file included from test_time.c:1:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+timer.h:6:34: error: expected identifier or ‘(’ before ‘)’ token
+ int init_timer(int sec,int usec,;);
+                                  ^
+In file included from timer.c:6:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+timer.h:6:34: error: expected identifier or ‘(’ before ‘)’ token
+ int init_timer(int sec,int usec,;);
+                                  ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+In file included from test_time.c:1:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+timer.h:6:34: error: expected identifier or ‘(’ before ‘)’ token
+ int init_timer(int sec,int usec,;);
+                                  ^
+In file included from timer.c:6:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+timer.h:6:34: error: expected identifier or ‘(’ before ‘)’ token
+ int init_timer(int sec,int usec,;);
+                                  ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+In file included from test_time.c:1:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+In file included from timer.c:6:0:
+timer.h:4:34: error: expected ‘;’, ‘,’ or ‘)’ before ‘int’
+ int set_proc(int (*call_fun)(int)int (*call_fun)(int),void *da)
+                                  ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:5:3: error: too few arguments to function ‘init_timer’
+   init_timer(1,0);
+   ^
+In file included from test_time.c:1:0:
+timer.h:5:5: note: declared here
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘time_callback’:
+test_time.c:8:3: warning: incompatible implicit declaration of built-in function ‘printf’ [enabled by default]
+   printf("catch a signal!! \r\n");
+   ^
+test_time.c:12:10: error: ‘SIGALRM’ undeclared (first use in this function)
+     case SIGALRM:
+          ^
+test_time.c:12:10: note: each undeclared identifier is reported only once for each function it appears in
+test_time.c:15:10: error: ‘SIGVTALRM’ undeclared (first use in this function)
+     case SIGVTALRM:
+          ^
+test_time.c: In function ‘main’:
+test_time.c:26:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+   init_timer(1,0,time_callback,0);
+   ^
+In file included from test_time.c:1:0:
+timer.h:5:5: note: expected ‘int (*)(int)’ but argument is of type ‘void (*)(int)’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘time_callback’:
+test_time.c:8:3: warning: incompatible implicit declaration of built-in function ‘printf’ [enabled by default]
+   printf("catch a signal!! \r\n");
+   ^
+test_time.c:12:10: error: ‘SIGALRM’ undeclared (first use in this function)
+     case SIGALRM:
+          ^
+test_time.c:12:10: note: each undeclared identifier is reported only once for each function it appears in
+test_time.c:15:10: error: ‘SIGVTALRM’ undeclared (first use in this function)
+     case SIGVTALRM:
+          ^
+test_time.c: In function ‘main’:
+test_time.c:26:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+   init_timer(1,0,time_callback,0);
+   ^
+In file included from test_time.c:1:0:
+timer.h:5:5: note: expected ‘int (*)(int)’ but argument is of type ‘void (*)(int)’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# test_time.c:26:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+test_time.c:26:3:：未找到命令
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:31:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+   init_timer(1,0,time_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:5:5: note: expected ‘int (*)(int)’ but argument is of type ‘void (*)(int)’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer’:
+timer.c:50:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+/tmp/cc6KWRCD.o：在函数‘time_callback’中：
+timer.c:(.text+0x0): `time_callback'被多次定义
+/tmp/ccJrwUe0.o:test_time.c:(.text+0x0)：第一次在此定义
+collect2: error: ld returned 1 exit status
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:31:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+   init_timer(1,0,time_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:5:5: note: expected ‘int (*)(int)’ but argument is of type ‘void (*)(int)’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘time_callback’:
+timer.c:28:6: warning: passing argument 1 of ‘g_process_func’ makes integer from pointer without a cast [enabled by default]
+      if(g_process_func(g_dat)<0) printf("error open data\r\n");
+      ^
+timer.c:28:6: note: expected ‘int’ but argument is of type ‘void *’
+timer.c: In function ‘init_timer’:
+timer.c:47:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+/tmp/cc84FRv6.o：在函数‘time_callback’中：
+timer.c:(.text+0x0): `time_callback'被多次定义
+/tmp/ccBYRIPh.o:test_time.c:(.text+0x0)：第一次在此定义
+collect2: error: ld returned 1 exit status
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:31:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+   init_timer(1,0,time_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:5:5: note: expected ‘int (*)(int)’ but argument is of type ‘void (*)(int)’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘time_callback’:
+timer.c:28:6: warning: passing argument 1 of ‘g_process_func’ makes integer from pointer without a cast [enabled by default]
+      if(g_process_func(g_dat)<0) printf("error open data\r\n");
+      ^
+timer.c:28:6: note: expected ‘int’ but argument is of type ‘void *’
+timer.c: In function ‘init_timer’:
+timer.c:47:19: warning: assignment from incompatible pointer type [enabled by default]
+     g_process_func=time_callback;
+                   ^
+/tmp/cceQ97Eb.o：在函数‘time_callback’中：
+timer.c:(.text+0x0): `time_callback'被多次定义
+/tmp/ccddrqQ9.o:test_time.c:(.text+0x0)：第一次在此定义
+collect2: error: ld returned 1 exit status
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+In file included from test_time.c:6:0:
+timer.h:10:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+test_time.c: In function ‘main’:
+test_time.c:19:18: error: ‘time_callback’ undeclared (first use in this function)
+   init_timer(1,0,time_callback,0);
+                  ^
+test_time.c:19:18: note: each undeclared identifier is reported only once for each function it appears in
+In file included from timer.c:6:0:
+timer.h:10:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+timer.c: In function ‘init_timer_module’:
+timer.c:48:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:19:18: error: ‘time_callback’ undeclared (first use in this function)
+   init_timer(1,0,time_callback,0);
+                  ^
+test_time.c:19:18: note: each undeclared identifier is reported only once for each function it appears in
+timer.c: In function ‘init_timer_module’:
+timer.c:48:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time.c    timer.c~     udp server loop back.c
+Makefile        test_time.c~   timer.h
+#Makefile#      test_timer.c~  timer.h~
+Makefile~       timer.c        udpclient.c
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:18: error: ‘time_callback’ undeclared (first use in this function)
+   init_timer(1,0,time_callback,0);
+                  ^
+test_time.c:21:18: note: each undeclared identifier is reported only once for each function it appears in
+timer.c: In function ‘time_callback’:
+timer.c:25:24: error: ‘g_dat’ undeclared (first use in this function)
+      if(g_process_func(g_dat)<0) printf("error open data\r\n");
+                        ^
+timer.c:25:24: note: each undeclared identifier is reported only once for each function it appears in
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+timer.c:48:3: error: ‘g_dat’ undeclared (first use in this function)
+   g_dat=da;
+   ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:18: error: ‘time_callback’ undeclared (first use in this function)
+   init_timer(1,0,time_callback,0);
+                  ^
+test_time.c:21:18: note: each undeclared identifier is reported only once for each function it appears in
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time.c    timer.c~     udp server loop back.c
+Makefile        test_time.c~   timer.h
+#Makefile#      test_timer.c~  timer.h~
+Makefile~       timer.c        udpclient.c
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:18: error: ‘time_callback’ undeclared (first use in this function)
+   init_timer(1,0,time_callback,0);
+                  ^
+test_time.c:21:18: note: each undeclared identifier is reported only once for each function it appears in
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:18: error: ‘time_callback’ undeclared (first use in this function)
+   init_timer(1,0,time_callback,0);
+                  ^
+test_time.c:21:18: note: each undeclared identifier is reported only once for each function it appears in
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time.c    timer.c~     udp server loop back.c
+Makefile        test_time.c~   timer.h
+#Makefile#      test_timer.c~  timer.h~
+Makefile~       timer.c        udpclient.c
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:18: error: ‘time_callback’ undeclared (first use in this function)
+   init_timer(1,0,time_callback,0);
+                  ^
+test_time.c:21:18: note: each undeclared identifier is reported only once for each function it appears in
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+   init_timer(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+/tmp/ccTIeCrM.o：在函数‘main’中：
+test_time.c:(.text+0x2e)：对‘init_timer’未定义的引用
+collect2: error: ld returned 1 exit status
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+   init_timer(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+/tmp/ccqOiqan.o：在函数‘main’中：
+test_time.c:(.text+0x2e)：对‘init_timer’未定义的引用
+collect2: error: ld returned 1 exit status
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+   init_timer(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=time_callback;
+                 ^
+/tmp/ccBqmyTV.o：在函数‘main’中：
+test_time.c:(.text+0x3d)：对‘init_timer’未定义的引用
+collect2: error: ld returned 1 exit status
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer’ from incompatible pointer type [enabled by default]
+   init_timer(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+/tmp/ccdulFxS.o：在函数‘main’中：
+test_time.c:(.text+0x3d)：对‘init_timer’未定义的引用
+collect2: error: ld returned 1 exit status
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+/tmp/ccwuSVGr.o：在函数‘main’中：
+test_time.c:(.text+0x3d)：对‘init_timer’未定义的引用
+collect2: error: ld returned 1 exit status
+make: *** [all] 错误 1
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+  C-c C-c
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+  C-c C-c
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:48:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+  C-c C-c
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:48:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# rm test_time
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time.c    timer.c~     udp server loop back.c
+Makefile        test_time.c~   timer.h
+#Makefile#      test_timer.c~  timer.h~
+Makefile~       timer.c        udpclient.c
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:48:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example#./test_time 
+  C-c C-c
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:48:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+  C-c C-c
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:50:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+catch a signal!! 
+Catch a signal -- SIGALRM hello 
+catch a signal!! 
+Catch a signal -- SIGALRM hello 
+catch a signal!! 
+Catch a signal -- SIGALRM hello 
+catch a signal!! 
+Catch a signal -- SIGALRM hello 
+catch a signal!! 
+Catch a signal -- SIGALRM hello 
+  C-c C-c
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:21:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(1,0,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:47:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  test_time      timer.c   udpclient.c
+Makefile        test_time.c    timer.c~  udp server loop back.c
+#Makefile#      test_time.c~   timer.h
+Makefile~       test_timer.c~  timer.h~
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+hello 
+hello 
+hello 
+hello 
+  C-c C-c
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  Makefile~  test_time.c    timer.c   timer.h~
+Makefile        *shell*    test_time.c~   timer.c~  udpclient.c
+#Makefile#      test_time  test_timer.c~  timer.h   udp server loop back.c
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+hello 
+hello 
+  C-c C-c
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:19:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(0,500,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:46:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+  C-c C-chello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+
+root@zcy-virtual-machine:~/app-master/example# make all
+gcc test_time.c timer.c -o test_time
+test_time.c: In function ‘main’:
+test_time.c:19:3: warning: passing argument 3 of ‘init_timer_module’ from incompatible pointer type [enabled by default]
+   init_timer_module(0,500000,timer_callback,0);
+   ^
+In file included from test_time.c:6:0:
+timer.h:6:5: note: expected ‘int (*)(int)’ but argument is of type ‘int (*)(void *)’
+ int init_timer_module(int sec,int usec,int (*call_fun)(int),void *dat);
+     ^
+timer.c: In function ‘init_timer_module’:
+timer.c:46:17: warning: assignment from incompatible pointer type [enabled by default]
+   g_process_func=call_fun;
+                 ^
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  Makefile~  test_time.c    timer.c   timer.h~
+Makefile        *shell*    test_time.c~   timer.c~  udpclient.c
+#Makefile#      test_time  test_timer.c~  timer.h   udp server loop back.c
+root@zcy-virtual-machine:~/app-master/example# ./test_time 
+hello 
+hello 
+hello 
+hello 
+hello 
+hello 
+  C-c C-c
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# 
+root@zcy-virtual-machine:~/app-master/example# ls
+file_manager.c  *shell*      test_time.c~   timer.h
+Makefile        *shell*~     test_timer.c~  timer.h~
+#Makefile#      test_time    timer.c        udpclient.c
+Makefile~       test_time.c  timer.c~       udp server loop back.c
+root@zcy-virtual-machine:~/app-master/example# 

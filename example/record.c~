@@ -1,0 +1,45 @@
+#include"record.h"
+
+uart_d uart_recorder;
+
+void thread_record();
+
+void start_record()
+{
+
+
+
+
+}
+void start_playback()
+{
+
+
+}
+
+int status_switch()
+{
+  int sec_passed;
+  switch(uart_recorder->status==IDLE)
+    {
+    case IDLE:
+      if(uart_recorder->action==IDLE) ;
+      if(uart_recorder->action==RECORD) start_record();
+      if(uart_recorder->action==PLAYBACK) start_playback(); 
+      break;
+    case RECORD:
+      if(uart_recorder->action==IDLE) ;
+      break;
+    case WAIT:
+      break;
+    case PLAYBACK:
+      break;
+    }
+}
+
+
+int start_record();
+int uart_record();
+int uart_playback();
+int uart_idle();
+

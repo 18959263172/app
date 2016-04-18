@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="css/setting.css" type="text/css" rel="stylesheet"></link>
+<link href="css/lucifer.css" type="text/css" rel="stylesheet"></link>
+
+</head>
+<script type="text/javascript" src="script/json.js"></script>
+<script language="javascript">
+
+var context = "{ \"List\": [";
+context += "{\"FName\":\"File_1\",\"FSize\":\"10小时\",\"Bits\":\"4Bits\",\"SampleRate\":\"8Mb\",\"Chan\":1},";
+context += "{\"FName\":\"File_2\",\"FSize\":\"10小时\",\"Bits\":\"8Bits\",\"SampleRate\":\"4Mb\",\"Chan\":2},";
+context += "{\"FName\":\"File_3\",\"FSize\":\"10小时\",\"Bits\":\"4Bits\",\"SampleRate\":\"8Mb\",\"Chan\":3},";
+context += "{\"FName\":\"File_4\",\"FSize\":\"10小时\",\"Bits\":\"8Bits\",\"SampleRate\":\"8Mb\",\"Chan\":2},";
+context += "{\"FName\":\"File_5\",\"FSize\":\"10小时\",\"Bits\":\"4Bits\",\"SampleRate\":\"4Mb\",\"Chan\":1}";
+context += "]}";
+
+
+var objXMLHttp ;
+
+function onStateChange()
+{
+    if (objXMLHttp.readyState == 4)
+    {           
+        if (objXMLHttp.status == 200 || objXMLHttp.status == 0)
+        {
+            var objJSON, context; 
+            context = objXMLHttp.responseText;
+//            alert(context);
+						var objJSON = eval( '(' + context + ')' );
+						if(objJSON.State.toUpperCase() == "IDLE")
+						{
+							document.getElementById("state").innerHTML = "空 闲";
+						}
+						else if(objJSON.State.toUpperCase() == "PLAYBACK")
+						{
+							document.getElementById("state").innerHTML = "正在回放";
+						}
+						else if(objJSON.State.toUpperCase() == "CAPTURE")
+						{
+							document.getElementById("state").innerHTML = "正在采集";
+						}			
+			createTable( objJSON.List );
+            objXMLHttp = null;
+        }
+    }
+}
+
+
+function onLoad()
+{
+//var objJSON = eval( '(' + context + ')' );
+//createTable( objJSON );
+//return;	
+			
+	if(window.XMLHttpRequest)
+	{
+		objXMLHttp = new XMLHttpRequest();
+	}
+	else
+	{
+		//for IE5 IE6
+		objXMLHttp = new ActiveObject("Microsoft.XMLHTTP");
+	}
+	
+	if(objXMLHttp != null)
+	{
+		objXMLHttp.onreadystatechange = onStateChange;
+		objXMLHttp.open("GET", "/behemoth/playback.cgi?a=" + Math.round(Math.random()*10000), true);
+		objXMLHttp.send(null);
+	}
+	else
+	{
+		alert("不支持XMLHTTP，请升级浏览器");
+	}
+
+}	
+function createTable(_list)
+{	
+	var divTab = document.getElementById("Table");
+    divTab.innerHTML = "";
+    createTitle(divTab);
+
+	for(i = 0; i < _list.length; i++)
+	{
+		createTabRow(divTab, i, _list[i]);
+	}
+
+}
+function createColume(_id)
+{
+	var _span = document.createElement("span"); 
+	_span.id = _id;
+	_span.className = "tabColume";
+	return _span;
+	
+}
+function playbackFile(_rid)
+{
+	var chan = 0;
+	var url = "http://" + document.location.host + "/behemoth/playback.cgi";
+	var context =  "Action=" + "Playback" + '&' ;
+
+	context     += "FileName=" + document.getElementById("Row_" + _rid + "_Name").innerHTML + '&';
+
+	if(document.getElementById("chanGPS_" + _rid ).checked )
+	{
+		chan += 1;
+	}
+	if(document.getElementById("chanBD_" + _rid ).checked)
+	{
+		chan += 2;
+	}
+
+	context += "Chan=" + chan ;	
+
+	if(window.XMLHttpRequest)
+	{
+		objXMLHttp = new XMLHttpRequest();
+	}
+	else
+	{
+		//for IE5 IE6
+		objXMLHttp = new ActiveObject("Microsoft.XMLHTTP");
+	}
+	
+	if(objXMLHttp != null)
+	{
+		objXMLHttp.open("POST", url, false);  
+		objXMLHttp.onreadystatechange = onStateChange;
+		objXMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		objXMLHttp.send(context);  	
+	}
+	else
+	{
+		alert("不支持XMLHTTP，请升级浏览器");
+	}	
+
+}
+function removeFile(_rid)
+{
+	var chan = 0;
+	var url = "http://" + document.location.host + "/behemoth/playback.cgi";
+	var context =  "Action=" + "Remove" + '&' ;
+	context     += "FileName=" + document.getElementById("Row_" + _rid + "_Name").innerHTML + '&';
+
+	if(document.getElementById("chanGPS_" + _rid ).checked )
+	{
+		chan += 1;
+	}
+	if(document.getElementById("chanBD_" + _rid ).checked)
+	{
+		chan += 2;
+	}
+
+	context += "Chan=" + chan ;	
+
+	if(window.XMLHttpRequest)
+	{
+		objXMLHttp = new XMLHttpRequest();
+	}
+	else
+	{
+		//for IE5 IE6
+		objXMLHttp = new ActiveObject("Microsoft.XMLHTTP");
+	}
+	
+	if(objXMLHttp != null)
+	{
+		objXMLHttp.open("POST", url, false);  
+		objXMLHttp.onreadystatechange = onStateChange;
+		objXMLHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		objXMLHttp.send(context);  	
+	}
+	else
+	{
+		alert("不支持XMLHTTP，请升级浏览器");
+	}		
+}
+
+function onRemove(eventTag)
+{
+	var event ;
+	if( eventTag != null)
+	{
+		event = eventTag;
+	}
+	else
+	{
+		event = window.event;
+	}
+	var _div = event.currentTarget ;
+	if(_div == null)
+	{
+		_div = event.srcElement;
+		//alert("x");
+	}
+
+	var rid = parseInt(_div.id.split("_")[1]);
+	//alert(rid);
+	removeFile(rid);
+}
+
+function onPlayback(eventTag)
+{
+	var event ;
+	if( eventTag != null)
+	{
+		event = eventTag;
+	}
+	else
+	{
+		event = window.event;
+	}
+	var _div = event.currentTarget ;
+	if(_div == null)
+	{
+		_div = event.srcElement;
+		//alert("x");
+	}
+	var rid = parseInt(_div.id.split("_")[1]);
+	//alert(rid);
+	playbackFile(rid);
+}
+function createRow(_id)
+{
+	var _div = document.createElement("div");  
+	_div.className = "tabRow";
+	_div.id = _id;	
+	return _div;	
+}
+
+function createTitle(_divTab)
+{
+	var _span;
+	var _rDiv = createRow("title");
+	_divTab.appendChild(_rDiv);
+	
+	_span = createColume("title_name");
+	_span.style.width = "200px";
+	_span.innerHTML="<b>文件名</b>"
+	_rDiv.appendChild(_span);
+	
+	_span = createColume("title_size");
+	_span.style.width = "100px";
+	_span.innerHTML="<b>文件大小</b>"	
+	_rDiv.appendChild(_span);
+		
+	_span = createColume("title_bits");
+	_span.style.width = "50px";
+	_span.innerHTML="<b>比特数</b>"		
+	_rDiv.appendChild(_span);
+	
+	
+	_span = createColume("title_samplerate");
+	_span.style.width = "50px";
+	_span.innerHTML="<b>采样率</b>"	
+	_rDiv.appendChild(_span);
+		
+	_span = createColume("title_chan");
+	_span.innerHTML="<b>通道</b>"		
+	_span.style.width = "150px";
+	_rDiv.appendChild(_span);
+		
+	_span = createColume("title_play");
+	_span.innerHTML="<b>回放</b>"		
+	_span.style.width = "50px";
+	_rDiv.appendChild(_span);		
+	
+	_span = createColume("title_del");
+	_span.innerHTML="<b>回放</b>"		
+	_span.style.width = "50px";
+	_rDiv.appendChild(_span);		
+	return _rDiv;
+}
+
+function createTabRow(_divTab, _rid, _line)
+{
+	var _span;
+	var _rDiv = createRow("Row_" + _rid);
+	_divTab.appendChild(_rDiv);
+	
+	_span = createColume("Row_" + _rid + "_Name");
+	_span.style.width = "200px";
+	_span.innerHTML = _line.FName;
+	_rDiv.appendChild(_span);
+	
+	_span = createColume("Row_" + _rid + "_Size");
+	_span.style.width = "100px";
+	_span.innerHTML = _line.FSize;
+	_rDiv.appendChild(_span);
+		
+	_span = createColume("Row_" + _rid + "_Bits");
+	_span.style.width = "50px";
+	_span.innerHTML = _line.Bits;		
+	_rDiv.appendChild(_span);
+	
+	
+	_span = createColume("Row_" + _rid + "_Samplerate");
+	_span.style.width = "50px";
+	_span.innerHTML = _line.SampleRate;	
+	_rDiv.appendChild(_span);
+		
+	_span = createColume("Row_" + _rid + "_Chan");
+	_span.innerHTML = createChannel(_rid, _line.Chan);	
+	_span.style.width = "150px";
+	_rDiv.appendChild(_span);
+		
+	_span = createColume("Row_" + _rid + "_Play");
+	_span.innerHTML="<b>回放</b>"		
+	_span.style.width = "50px";
+	_span.onclick = onPlayback;
+	_rDiv.appendChild(_span);		
+
+	_span = createColume("Row_" + _rid + "_Del");
+	_span.innerHTML="<b>删除</b>"		
+	_span.style.width = "50px";
+	_span.onclick = onRemove;
+	_rDiv.appendChild(_span);	
+		
+}
+function createChannel(_id, _chan)
+{
+	var gps_id = "chanGPS_" + _id;
+	var bd_id  = "chanBD_" + _id;
+	var gps_check;
+	var bd_check;
+	if(_chan == 1)
+	{
+		gps_check = "checked";
+	}
+	else if(_chan == 2)
+	{
+		bd_check = "checked";
+	}
+	else if(_chan == 3)
+	{
+		gps_check = "checked";
+		bd_check = "checked";
+	}
+	var channel  = "<span style=\"float:left;margin-left:15px\">";
+		channel += "<input type=\"checkbox\" id=\""+ gps_id + "\"" + gps_check +">GPS L1<br></span>";
+		channel += "<span>";
+		channel += "<input type=\"checkbox\" id=\""+ bd_id + "\"" + bd_check +">北斗 B1<br></span>";	 		
+	return channel;	
+}
+</script>
+<body onload="onLoad()">
+<div class="tP">
+    <div class="tPt">信号回放</div>
+    <div style="margin-left:60px;margin-top:60px">
+        <div style="height: 40px"><b>当前状态:</b>
+            <span style="position:absolute;left:200px" id="state">正 在 回 放</span>
+        </div>
+    </div>    
+	<div class="tabBG" id="Table">
+    </div>
+</div>
+</body>
+</html>
