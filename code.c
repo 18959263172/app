@@ -44,21 +44,4 @@ int readFileList(char *basePath)
     
     return 1;
 }
-/*
-  @brief
-  
-*/
-int main(void)
-{
-    DIR *dir;
-    char basePath[1000];
-        ///get the current absoulte path
-    memset(basePath,'\0',sizeof(basePath));
-    getcwd(basePath, 999);
-    printf("the current dir is : %s\n",basePath);
-        ///get the file list
-    memset(basePath,'\0',sizeof(basePath));
-    strcpy(basePath,"./XL");
-    readFileList("/");
-    return 0;
-}
+

@@ -1,25 +1,15 @@
-<<<<<<< HEAD
-CC=gcc
-=======
-CC=arm-xilinx-linux-gnueabi-g++
->>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
-socket:
-	${CC} socket.c -o socket
-main:
-	${CC} main.c -o main csock.c ticket.c 
-udp:	
-	${CC} udptrans.c -o udp 
-test:
-	${CC} test_udp.c -o test
-clean:
-	rm ./main
-all:	
-	${CC} server.c -o server 
-clent:
-	${CC} client.c -o client	
-code:
-<<<<<<< HEAD
-	${CC} code.c -o code
-=======
-	${CC} code.c -o code
->>>>>>> 0820dbbe95a35df66e11f67634ab1c8be8f6fb76
+CC=g++
+AR=${CROSS_CP}ar
+src=${wildcard  *.c}
+obj=${wildcard *.o}
+header=${wildcard *.h}
+REF:= 
+PRG := test.linux
+all:  $(obj)
+	${CC}  -c  $(src) 
+	rm libzcy.a
+	${AR} rcs libzcy.a   $(obj)	
+	ranlib libzcy.a
+	cp libzcy.a /usr/lib/
+	cp libzcy.a /lib/
+	cp ${header} /usr/include  

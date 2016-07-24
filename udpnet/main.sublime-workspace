@@ -1,0 +1,294 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"def",
+				"define"
+			],
+			[
+				"dat",
+				"data_pack"
+			],
+			[
+				"ty",
+				"typename"
+			],
+			[
+				"p",
+				"PhantomJS"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 219.0,
+		"last_filter": "codein",
+		"selected_items":
+		[
+			[
+				"codein",
+				"SublimeCodeIntel: Dump Import Directories"
+			],
+			[
+				"sin",
+				"SublimeCodeIntel: Reset"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"sub",
+				"Preferences: SublimeClang Settings – User"
+			],
+			[
+				"sublim",
+				"Preferences: SublimeClang Settings – User"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 195.0,
+		"history":
+		[
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')",
+			"    import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart Sublime Text to finish installation')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/zcy/workspace/socket/select/udp_s/main.c",
+		"/root/.config/sublime-text-3/Packages/User/SublimeClang.sublime-settings",
+		"/root/workspace/v4l2/exp_cap/main.c",
+		"/root/workspace/v4l2/exp_cap/Makefile",
+		"/root/workspace/v4l2/exp_cap/wd",
+		"/root/webkitgtk-2.12.3/Tools/gtk/install-dependencies",
+		"/root/webkitgtk-2.12.3/Source/cmake/CMakeFiles/CMakeOutput.log",
+		"/var/www/html/index.php",
+		"/root/blog/config/app.php",
+		"/root/driver/rs",
+		"/root/driver/main",
+		"/root/driver/main.ko",
+		"/root/driver/Makefile",
+		"/home/zcy/test.log",
+		"/root/main",
+		"/root/rps/subsystems/linux/configs/kernel/config",
+		"/root/rps/subsystems/linux/configs/generic/config",
+		"/root/rps2/subsystems/linux/configs/kernel/config",
+		"/root/petalinux-v2014.4-final/components/linux-kernel/xlnx-3.17/drivers/net/ethernet/Makefile",
+		"/root/petalinux-v2014.4-final/components/linux-kernel/xlnx-3.17/drivers/net/ethernet/Kconfig",
+		"/root/petalinux-v2014.4-final/components/linux-kernel/xlnx-3.17/drivers/net/ethernet/cadence/Makefile",
+		"/root/petalinux-v2014.4-final/components/linux-kernel/xlnx-3.17/drivers/net/ethernet/cadence/Kconfig",
+		"/home/zcy/petalinux-v2013.10-final/components/linux-kernel/xlnx-3.8/drivers/net/ethernet/xilinx/xilinx_emacps.c",
+		"/root/rps2/subsystems/linux/configs/generic/config",
+		"/root/petalinux-v2014.2-final/components/linux-kernel/xlnx-3.14/drivers/net/ethernet/xilinx/xilinx_emacps.c",
+		"/root/main.cpp",
+		"/root/workspace/pywork/save.py",
+		"/root/workspace/http_probe-master/src_hp/hp_parse.h",
+		"/root/workspace/http_probe-master/src_hp/hp_parser.cpp",
+		"/root/workspace/http_probe-master/src_hp/hp_do.c",
+		"/root/workspace/http_probe-master/src_hp/gumo_xml.cpp",
+		"/root/workspace/crawler/QueryUtil.cpp"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"c_addr",
+			"arg",
+			"cap",
+			"STD",
+			"fmt",
+			"!",
+			"process_image",
+			"frame_count",
+			"mainloop",
+			"fmt",
+			"libtool-bin",
+			"libtool",
+			"lib",
+			"error",
+			"errir",
+			"mysql",
+			"mii",
+			"PHY",
+			"lib",
+			"XT_BD",
+			"MACB_EXT_BD",
+			"CADENCE",
+			"HAS_DMA",
+			"NETDEVICE",
+			" CONFIG_NETDEVICES",
+			"MII",
+			"MACB",
+			"DEBUG",
+			"MARVELL",
+			"MAR",
+			"MACB",
+			"DEBUG",
+			"denug",
+			" CONFIG_NET_CADENCE",
+			" CONFIG_MACB",
+			" CONFIG_NETDEVICES",
+			"mdio",
+			"mdio_pro",
+			"mdio",
+			"phy_node",
+			"setup",
+			"hell",
+			"buf",
+			"kbuf_user_write",
+			"typename",
+			"connections_list::",
+			"connections_list",
+			"conections_list",
+			"connections_list",
+			"cnnections_list",
+			"typename",
+			"connections_list"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/untitled.sublime-build",
+	"project": "main.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 194.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

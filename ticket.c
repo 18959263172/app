@@ -6,12 +6,6 @@
 #include <sys/time.h>
 #include"tick.h"
 
-#include"csock.h"
-
-//second run through
-extern zcsock new1;
-extern char *buffer;   
-
 int sec;
 //callback function
 int (*g_process_func) (void *param);
